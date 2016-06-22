@@ -3,12 +3,14 @@
  */
 
 import java.io.File;
+import java.net.URISyntaxException;
+
 import net.sourceforge.tess4j.*;
 
 public class A {
 
-    public static void main(String[] args) {
-        File imageFile = new File("/Users/rotems/dev/IdeaProjects/sensorme/src/main/resources/4_360.jpg");
+    public static void main(String[] args) throws URISyntaxException {
+        File imageFile = new File(ClassLoader.getSystemResource("4_360.jpg").toURI());
         ITesseract instance = new Tesseract();  // JNA Interface Mapping
         // ITesseract instance = new Tesseract1(); // JNA Direct Mapping
         instance.setDatapath("/usr/local/share/tessdata");
