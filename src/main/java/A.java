@@ -11,6 +11,7 @@ public class A {
         File imageFile = new File("/Users/rotems/dev/IdeaProjects/sensorme/src/main/resources/4_360.jpg");
         ITesseract instance = new Tesseract();  // JNA Interface Mapping
         // ITesseract instance = new Tesseract1(); // JNA Direct Mapping
+        instance.setDatapath("/usr/local/share/tessdata");
 
         try {
             String result = instance.doOCR(imageFile);
